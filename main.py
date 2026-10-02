@@ -45,3 +45,12 @@ print(F)
 # print(f'the average of data_list is {average}')
 # avg = data["temp"].mean()
 # print(avg)
+
+
+data_dict = {
+    "students" : ["amy" , "James" , "Angela"] ,
+    "scores": [76, 75, 65]
+}  
+
+dic = pd.DataFrame(data_dict)
+dic.to_csv("new_data2.csv")
