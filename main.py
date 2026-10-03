@@ -9,29 +9,29 @@
 
 # print(tempratures)
 
-import pandas as pd
+# import pandas as pd
 
-data = pd.read_csv("weather_data.csv")
+# data = pd.read_csv("weather_data.csv")
 # biggest = data["temp"].max()
 # print(biggest)
 
 # print(data['condition'])
 # print(data.condition)
-# # print(data[data.day ==  'Monday'])
+# print(data[data.day ==  'Monday'])
 # max_temp = data["temp"].max()
 # print(data[data.temp == max_temp])
-monday = data[data.day == "Monday"]
-C = monday["temp"]
-F = C*(9/5)
-F += 32
-print(F)
+# monday = data[data.day == "Monday"]
+# C = monday["temp"]
+# F = C*(9/5)
+# F += 32
+# print(F)
 
 
 
 
 # umer = type(data)
 # print(umer)
-# # print(data['temp'])
+# print(data['temp'])
 
 # print(umer)
 
@@ -47,10 +47,19 @@ print(F)
 # print(avg)
 
 
-data_dict = {
-    "students" : ["amy" , "James" , "Angela"] ,
-    "scores": [76, 75, 65]
-}  
+# data_dict = {
+#     "students" : ["amy" , "James" , "Angela"] ,
+#     "scores": [76, 75, 65]
+# }  
 
-dic = pd.DataFrame(data_dict)
-dic.to_csv("new_data2.csv")
+# dic = pd.DataFrame(data_dict)
+# dic.to_csv("new_data2.csv")
+
+import pandas
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+
+
+
+
