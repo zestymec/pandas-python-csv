@@ -1,3 +1,24 @@
+import pandas
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+gray_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
+print(gray_squirrels_count)
+cinnamon_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
+print(cinnamon_squirrels_count)
+black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
+print(black_squirrels_count)
+
+
+data_dict = {
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
+    "Count": [gray_squirrels_count, cinnamon_squirrels_count, black_squirrels_count],
+}
+
+df = pandas.DataFrame(data_dict)
+
+
+
 # import csv
 
 # with open("/Users/apple/umeraziz/pandas-python-csv/weather_data.csv", newline="") as data_file:
@@ -27,8 +48,6 @@
 # print(F)
 
 
-
-
 # umer = type(data)
 # print(umer)
 # print(data['temp'])
@@ -50,16 +69,7 @@
 # data_dict = {
 #     "students" : ["amy" , "James" , "Angela"] ,
 #     "scores": [76, 75, 65]
-# }  
+# }
 
 # dic = pd.DataFrame(data_dict)
 # dic.to_csv("new_data2.csv")
-
-import pandas
-
-data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-
-
-
-
-
