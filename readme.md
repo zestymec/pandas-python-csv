@@ -1,4 +1,4 @@
-<h1>192 done</h1>
+<h1>193 done</h1>
 started day 25 for pandas in pyhton 
 how to work with data files and csv reader 
 also csv lirary 
