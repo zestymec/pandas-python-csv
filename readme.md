@@ -7,6 +7,6 @@ series and dataframe in pandas and their conversion
 mode medians extra in pandas !
 how to play with rows and column  and series
 data frame from scratch and how manage a large  files
-list and dictonaru comprihension
+<strong>(list and dictonaru comprihension)</strong>
 python sequences
 
