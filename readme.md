@@ -8,4 +8,5 @@ mode medians extra in pandas !
 how to play with rows and column  and series
 data frame from scratch and how manage a large  files
 list and dictonaru comprihension
+python sequences
 
