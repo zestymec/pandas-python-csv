@@ -1,5 +1,6 @@
 <h1><strong>Day</strong> 26</h1> done
-<h2>202 done</h2>
+<h2>204 done</h2>
+205 going on on 2 min   
 started day 25 for pandas in pyhton 
 how to work with data files and csv reader 
 also csv lirary 
@@ -13,3 +14,6 @@ dictionary comprehension
 loops with pandas data frames and iterate over a pandas data frame
 introduction to NATO elements
 making nato alphabet project
+tkinter  gui library
+args and kwargs
+unit coverter program
