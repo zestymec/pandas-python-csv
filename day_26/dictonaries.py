@@ -1,6 +1,11 @@
-names = ['Azhar' , 'Taha' , 'Huzaifa' , 'Ahad' , 'Anas' , 'Rafay']
+import random
+names = ['Azhar' , 'Taha' , 'Huzaifa' , 'Ahad' , 'Anas' , 'Rafay' , 'Qasim']
 
 students_scores = {
-    "new_key":"new_value" for name in names
+    name:random.randint(1 , 100) for name in names
 }
 print(students_scores)
+passed_students = {
+    name:score for (name,score) in students_scores.items() if score > 60
+}
+print(passed_students)
