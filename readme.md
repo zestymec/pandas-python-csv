@@ -1,6 +1,5 @@
-<h1><strong>Day</strong> 26</h1> done
-<h2>208 done</h2>
-205 going on on 2 min   
+<h1><strong>Day</strong> 27</h1> done
+<h2>212f done</h2>
 started day 25 for pandas in pyhton 
 how to work with data files and csv reader 
 also csv lirary 
@@ -14,8 +13,9 @@ dictionary comprehension
 loops with pandas data frames and iterate over a pandas data frame
 introduction to NATO elements
 making nato alphabet project
-tkinter  gui library
+tkinter  gui library a geo-metric Design
 args and kwargs
 unit coverter program
 advance python arguments
 unlimited positional arguments
+layout managers like pack and grid and place
