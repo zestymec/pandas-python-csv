@@ -1,5 +1,5 @@
 <h1><strong>Day</strong> 26</h1> done
-<h2>204 done</h2>
+<h2>208 done</h2>
 205 going on on 2 min   
 started day 25 for pandas in pyhton 
 how to work with data files and csv reader 
@@ -17,3 +17,5 @@ making nato alphabet project
 tkinter  gui library
 args and kwargs
 unit coverter program
+advance python arguments
+unlimited positional arguments
