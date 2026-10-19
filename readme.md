@@ -20,3 +20,5 @@ advance python arguments
 unlimited positional arguments
 layout managers like pack and grid and place
 pmodoro app
+how to put image into the program
+canvas widget
