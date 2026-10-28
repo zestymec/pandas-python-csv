@@ -21,8 +21,9 @@ LONG_BREAK_MIN = 20
 #     time.sleep(1)
 #     count-=1
 def count_down(count):
-    print(count)
-    window.after(1000, count_down, count - 1)
+    canvas.itemconfig(timer_text , text=count)
+    if count > 0:
+        window.after(1000, count_down, count - 1)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -31,13 +32,17 @@ window.title("Pomodoro App")
 my_label = Label(text="Timer", font=("Arial", 54, "bold"), fg=GREEN, bg=YELLOW)
 my_label.grid(row=1, column=2)
 window.config(padx=100, pady=50, bg=YELLOW)
-count_down(5)
+
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
 tomato_img = PhotoImage(
     file="/Users/apple/umeraziz/pandas-python-csv/pomodoro_app/tomato.png"
 )
+
+
 canvas.create_image(100, 112, image=tomato_img)
-canvas.create_text(100, 130.0, text=0, fill="white", font=(FONT_NAME, 35, "bold"))
+
+timer_text = canvas.create_text(100, 130.0, text=0, fill="white", font=(FONT_NAME, 35, "bold"))
+count_down(5)
 canvas.grid(row=2, column=2)
 
 startbutton = Button(text="Start", bg=YELLOW, highlightbackground=YELLOW)
