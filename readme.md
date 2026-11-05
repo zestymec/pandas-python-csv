@@ -117,10 +117,10 @@ python pomodoro_app/main.py
 ⭐ **Learning in public, one day at a time.** ⭐
 
 Made with ❤️ by **Umer**
-python dynaim typing
+python dynaim typing it is not availble in other langs to give data new by giving new value
 </div>
 
 
 
 
-216 done
+217 done
