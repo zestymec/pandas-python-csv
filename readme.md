@@ -117,10 +117,10 @@ python pomodoro_app/main.py
 ⭐ **Learning in public, one day at a time.** ⭐
 
 Made with ❤️ by **Umer**
-
+python dynaim typing
 </div>
 
 
 
 
-216 9.57
+216 done
