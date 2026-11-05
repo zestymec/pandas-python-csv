@@ -10,43 +10,39 @@ FONT_NAME = "Courier"
 WORK_MIN = 1
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
-reps = 0  # FIX 1: reps variable global level par initialize kiya
+reps = 0
 timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
-    window.after_cancel(timer)
-    canvas.itemconfig(timer_text , text="00:00")
-    my_label.config(text="Timer")
+    if timer:
+        window.after_cancel(timer)
+    canvas.itemconfig(timer_text, text="00:00")
+    my_label.config(text="Timer", fg=GREEN)
     checmark.config(text="")
     global reps
     reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
-
 def start_timer():
     global reps
     reps += 1
 
     work_sec = WORK_MIN * 60
-    short_break_sec = SHORT_BREAK_MIN * 60  # FIX 2: staticmethod ki jagah SHORT_BREAK_MIN lagaya
+    short_break_sec = SHORT_BREAK_MIN * 60
     long_break_sec = LONG_BREAK_MIN * 60
-
-    # FIX 3: Pehle yahan extra count_down(5 * 60) tha, use hata diya.
 
     if reps % 8 == 0:
         count_down(long_break_sec)
-        my_label.config(text="long-Break", fg=RED)
+        my_label.config(text="Break", fg=RED)
     elif reps % 2 == 0:
         count_down(short_break_sec)
-        my_label.config(text="short-Break", fg=PINK)
+        my_label.config(text="Break", fg=PINK)
     else:
         count_down(work_sec)
-        my_label.config(text="Timer", fg=GREEN)
-
+        my_label.config(text="Work", fg=GREEN)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
-
 def count_down(count):
     count_min = math.floor(count / 60)
     count_sec = count % 60
@@ -59,15 +55,13 @@ def count_down(count):
         timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
-        mark = ""
-        for _ in range(math.floor(reps/2)):
-            mark += "✓"
-
-        checmark.config(Text=mark)
-
+        marks = ""
+        work_sessions = math.floor(reps / 2)
+        for _ in range(work_sessions):
+            marks += "✓"
+        checmark.config(text=marks)  # FIX: Capital 'Text' ki jagah small 'text'
 
 # ---------------------------- UI SETUP ------------------------------- #
-
 window = Tk()
 window.title("Pomodoro App")
 window.config(padx=100, pady=50, bg=YELLOW)
@@ -90,7 +84,9 @@ startbutton = Button(
 )
 startbutton.grid(row=3, column=1)
 
-resetbutton = Button(text="Reset", bg=YELLOW, highlightbackground=YELLOW , command=reset_timer)
+resetbutton = Button(
+    text="Reset", bg=YELLOW, highlightbackground=YELLOW, command=reset_timer
+)
 resetbutton.grid(row=3, column=3)
 
 checmark = Label(text="", fg=GREEN, bg=YELLOW)
