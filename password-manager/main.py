@@ -17,7 +17,11 @@ def save_password():
         )
         return
 
-    file_path = os.path.join(os.path.dirname(__file__), "data.txt")
+    
+    do = messagebox.askokcancel(title=website , message=f"These are the details entered: \nEmail: {email} \n Password: {password} \n Is it ok to save?")
+    if do:
+        file_path = os.path.join(os.path.dirname(__file__), "data.txt")
+
 
     with open(file_path, "a") as file:
         file.write(
