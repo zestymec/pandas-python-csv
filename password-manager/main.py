@@ -1,8 +1,20 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+import secrets
+import string
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def generate_password():
+    letters = string.ascii_letters
+    digits = string.digits
+    symbols = string.punctuation
+
+    all_characters = letters + digits + symbols
+    random_password = ''.join(secrets.choice(all_characters) for i in range(12))
+
+    pass_input.delete(0, END)
+    pass_input.insert(0, random_password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_password():
@@ -74,7 +86,10 @@ pasw.grid(row=4, column=1)
 pass_input = Entry(width=21, bg="white", fg="black")
 pass_input.grid(row=4, column=2)
 
-generate_button = Button(text="Generate Password")
+generate_button = Button(
+    text="Generate Password",
+    command=generate_password
+)
 generate_button.grid(row=4, column=3)
 
 add_button = Button(
