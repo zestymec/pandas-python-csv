@@ -122,5 +122,8 @@ python dynaim typing it is not availble in other langs to give data new by givin
 
 
 
+28th day is also done 
 
-218 done
+220 video done
+
+creating  password manager 
