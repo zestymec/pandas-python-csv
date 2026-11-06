@@ -20,6 +20,7 @@
 
 - [What I Learned](#-what-i-learned)
 - [Projects](#-projects)
+- [Password Manager](#-password-manager)
 - [Repository Structure](#-repository-structure)
 - [Getting Started](#-getting-started)
 - [Learning Progress](#-learning-progress)
@@ -68,14 +69,15 @@
 - Building a multi-field Tkinter form
 - Using callbacks with buttons
 - Validating user input with `messagebox`
-- Generating secure passwords with Python's `secrets` module
+- Generating 16-character passwords with Python's `secrets` module
 - Copying generated passwords to the clipboard
+- Designing a polished dark-mode desktop interface
 
 ### 📅 Day 30 — Errors, Exceptions & JSON *(in progress)* 🧩
 
 - Understanding errors and exception handling
 - Saving structured application data as JSON
-- Improving the Password Manager project
+- Improving the Password Manager experience and reliability
 
 ---
 
@@ -87,7 +89,32 @@
 | 📻 [**NATO Alphabet**](NATO_Alphabet_project/) | Type a word and get its NATO phonetic spelling | dict comprehension, `iterrows()` |
 | 📏 [**Miles → Km Converter**](day_27/miles_to_km_converter.py) | A small GUI unit converter | `tkinter`, `grid()` |
 | 🍅 [**Pomodoro Timer**](pomodoro_app/) | A focus timer with a tomato UI | `tkinter`, `Canvas`, `PhotoImage` |
-| 🔐 [**Password Manager**](password-manager/) | Generate, copy, validate and save passwords | `tkinter`, callbacks, file handling |
+| 🔐 [**Vault Password Manager**](password-manager/) | A focused desktop vault for generating, copying and saving credentials | `tkinter`, `ttk`, `secrets`, file handling |
+
+---
+
+## 🔐 Password Manager
+
+The Password Manager is a compact desktop vault built with Python and Tkinter. Its redesigned interface uses a dark, card-based layout to keep credential entry focused and easy to scan.
+
+### Features
+
+- Secure 16-character password generation using `secrets`
+- Show and hide password visibility on demand
+- One-click clipboard copying
+- Website, username and password validation
+- Confirmation before credentials are saved
+- Clear success and error feedback inside the app
+- Credentials stored in the project's local `password-manager/data.txt` file
+- File paths resolved relative to the application, so it can be launched from any directory
+
+### Run it
+
+```bash
+python password-manager/main.py
+```
+
+The first launch creates `password-manager/data.txt` when the first credential is saved. The local data file contains credentials in plain text, so keep it private and do not commit it to a public repository.
 
 ---
 
@@ -99,7 +126,7 @@ pandas-python-csv/
 ├── 📂 day_27/                  # Tkinter widgets, *args/**kwargs, converter
 ├── 📂 NATO_Alphabet_project/   # NATO phonetic alphabet project
 ├── 📂 pomodoro_app/            # Pomodoro timer (Tkinter + Canvas)
-├── 📂 password-manager/        # Password manager GUI and logo
+├── 📂 password-manager/        # Vault password manager, logo and local data
 ├── 📂 us_states_game/          # U.S. States guessing game (Turtle)
 ├── 📄 main.py                  # Pandas & CSV experiments
 ├── 📊 weather_data.csv         # Sample weather dataset
@@ -112,14 +139,11 @@ pandas-python-csv/
 ## ⚙️ Getting Started
 
 ```bash
-# Clone the repo
 git clone https://github.com/zestymec/pandas-python-csv.git
 cd pandas-python-csv
 
-# Install dependencies
-pip install -r requirements.txt   # or: pip install pandas
+pip install -r requirements.txt
 
-# Run a project
 python NATO_Alphabet_project/main.py
 python us_states_game/main.py
 python pomodoro_app/main.py

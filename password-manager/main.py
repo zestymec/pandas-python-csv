@@ -1,114 +1,211 @@
-from tkinter import *
-from tkinter import messagebox
 import os
 import secrets
 import string
+import tkinter as tk
+from tkinter import messagebox, ttk
 
-# ---------------------------- PASSWORD GENERATOR ------------------------------- #
+
+BACKGROUND = "#101827"
+SURFACE = "#182235"
+SURFACE_ALT = "#202d43"
+TEXT = "#f4f7fb"
+MUTED = "#9aa9bd"
+ACCENT = "#6c8cff"
+ACCENT_HOVER = "#829cff"
+SUCCESS = "#5ed6a0"
+ERROR = "#ff8c8c"
+
+
 def generate_password():
-    letters = string.ascii_letters
-    digits = string.digits
-    symbols = string.punctuation
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = "".join(secrets.choice(characters) for _ in range(16))
+    password_var.set(password)
+    password_entry.select_range(0, tk.END)
+    password_entry.focus_set()
+    set_status("Secure password generated", SUCCESS)
 
-    all_characters = letters + digits + symbols
-    random_password = ''.join(secrets.choice(all_characters) for i in range(12))
-
-    pass_input.delete(0, END)
-    pass_input.insert(0, random_password)
-
-# ---------------------------- SAVE PASSWORD ------------------------------- #
-def save_password():
-    website = web_input.get()
-    email = mail_input.get()
-    password = pass_input.get()
-
-    if not website or not email or not password:
-        messagebox.showwarning(
-            "Error",
-            "Please don't leave any fields empty!"
-        )
-        return
-
-    
-    do = messagebox.askokcancel(title=website , message=f"These are the details entered: \nEmail: {email} \n Password: {password} \n Is it ok to save?")
-    if do:
-        file_path = os.path.join(os.path.dirname(__file__), "data.txt")
-
-
-    with open(file_path, "a") as file:
-        file.write(
-            f"Website: {website} | Email: {email} | Password: {password}\n"
-        )
-
-    web_input.delete(0, END)
-    pass_input.delete(0, END)
 
 def copy_password():
-    password = pass_input.get()
+    password = password_var.get()
+    if not password:
+        set_status("Generate a password before copying", ERROR)
+        return
 
-    if password:
-        window.clipboard_clear()
-        window.clipboard_append(password)
-        window.update()
+    window.clipboard_clear()
+    window.clipboard_append(password)
+    window.update()
+    set_status("Password copied to clipboard", SUCCESS)
 
-# ---------------------------- UI SETUP ------------------------------- #
 
-window = Tk()
-window.title("Password Manager")
-window.config(padx=20, pady=20, bg="white")
+def save_password():
+    website = website_var.get().strip()
+    email = email_var.get().strip()
+    password = password_var.get()
 
-canvas = Canvas(
-    window,
-    width=200,
-    height=200,
-    bg="white",
-    highlightthickness=0,
-    bd=0
+    if not website or not email or not password:
+        set_status("Complete all fields before saving", ERROR)
+        messagebox.showwarning("Missing details", "Please complete all fields before saving.")
+        return
+
+    confirmed = messagebox.askyesno(
+        "Confirm save",
+        f"Save credentials for {website}?\n\nUsername: {email}",
+        parent=window,
+    )
+    if not confirmed:
+        return
+
+    file_path = os.path.join(os.path.dirname(__file__), "data.txt")
+    try:
+        with open(file_path, "a", encoding="utf-8") as file:
+            file.write(f"Website: {website} | Email: {email} | Password: {password}\n")
+    except OSError as error:
+        set_status("Unable to save credentials", ERROR)
+        messagebox.showerror("Save failed", f"Could not write to the vault:\n{error}", parent=window)
+        return
+
+    website_var.set("")
+    password_var.set("")
+    website_entry.focus_set()
+    set_status("Credentials saved successfully", SUCCESS)
+
+
+def toggle_password():
+    password_entry.configure(show="" if password_entry.cget("show") else "•")
+    reveal_button.configure(text="Hide" if password_entry.cget("show") == "" else "Show")
+
+
+def set_status(message, color=TEXT):
+    status_label.configure(text=message, foreground=color)
+    window.after(4000, lambda: status_label.configure(text="Ready to secure your accounts", foreground=MUTED))
+
+
+window = tk.Tk()
+window.title("Vault • Password Manager")
+window.configure(bg=BACKGROUND)
+window.resizable(False, False)
+
+style = ttk.Style(window)
+style.theme_use("clam")
+style.configure(
+    "App.TButton",
+    background=ACCENT,
+    foreground=TEXT,
+    borderwidth=0,
+    padding=(14, 10),
+    font=("Helvetica", 10, "bold"),
 )
-logo = PhotoImage(file="password-manager/logo.png")
-canvas.create_image(100, 100, image=logo)
-canvas.grid(row=1, column=2)
-
-label_config = {"bg": "white", "fg": "black"}
-
-web = Label(text="Website:", **label_config)
-web.grid(row=2, column=1)
-
-
-web_input = Entry(width=35, bg="white", fg="black")
-web_input.grid(row=2, column=2, columnspan=2)
-web_input.focus()
-
-mail = Label(text="Email/Username:", **label_config)
-mail.grid(row=3, column=1)
-
-mail_input = Entry(width=35, bg="white", fg="black")
-mail_input.grid(row=3, column=2, columnspan=2)
-mail_input.insert(0 , "@email.com")
-
-pasw = Label(text="Password:", **label_config)
-pasw.grid(row=4, column=1)
-
-pass_input = Entry(width=21, bg="white", fg="black")
-pass_input.grid(row=4, column=2)
-
-generate_button = Button(
-    text="Generate Password",
-    command=generate_password
+style.map("App.TButton", background=[("active", ACCENT_HOVER)])
+style.configure(
+    "Secondary.TButton",
+    background=SURFACE_ALT,
+    foreground=TEXT,
+    borderwidth=0,
+    padding=(12, 9),
+    font=("Helvetica", 10, "bold"),
 )
-generate_button.grid(row=4, column=3)
-
-copy_button = Button(
-    text="Copy",
-    command=copy_password
+style.map("Secondary.TButton", background=[("active", "#2c3b55")])
+style.configure(
+    "Field.TEntry",
+    fieldbackground=SURFACE_ALT,
+    foreground=TEXT,
+    insertcolor=TEXT,
+    borderwidth=0,
+    padding=10,
+    font=("Helvetica", 11),
 )
-copy_button.grid(row=4, column=4)
 
-add_button = Button(
-    text="Add",
-    width=36,
-    command=save_password
+website_var = tk.StringVar()
+email_var = tk.StringVar(value="@email.com")
+password_var = tk.StringVar()
+
+outer = tk.Frame(window, bg=BACKGROUND, padx=34, pady=30)
+outer.pack()
+
+header = tk.Frame(outer, bg=BACKGROUND)
+header.pack(fill="x", pady=(0, 24))
+
+logo = tk.PhotoImage(file=os.path.join(os.path.dirname(__file__), "logo.png"))
+logo = logo.subsample(max(1, logo.width() // 72))
+tk.Label(header, image=logo, bg=BACKGROUND).pack(side="left", padx=(0, 16))
+
+heading = tk.Frame(header, bg=BACKGROUND)
+heading.pack(side="left")
+tk.Label(
+    heading,
+    text="Your digital vault",
+    bg=BACKGROUND,
+    fg=TEXT,
+    font=("Helvetica", 23, "bold"),
+).pack(anchor="w")
+tk.Label(
+    heading,
+    text="Store and generate credentials with confidence.",
+    bg=BACKGROUND,
+    fg=MUTED,
+    font=("Helvetica", 10),
+).pack(anchor="w", pady=(5, 0))
+
+card = tk.Frame(outer, bg=SURFACE, padx=24, pady=24)
+card.pack(fill="x")
+
+tk.Label(
+    card,
+    text="ADD NEW LOGIN",
+    bg=SURFACE,
+    fg=ACCENT_HOVER,
+    font=("Helvetica", 9, "bold"),
+).grid(row=0, column=0, columnspan=3, sticky="w", pady=(0, 18))
+
+def add_field(label, variable, row):
+    tk.Label(
+        card,
+        text=label,
+        bg=SURFACE,
+        fg=MUTED,
+        font=("Helvetica", 9, "bold"),
+    ).grid(row=row, column=0, sticky="w", pady=(0, 7))
+    entry = ttk.Entry(card, textvariable=variable, style="Field.TEntry", width=39)
+    entry.grid(row=row + 1, column=0, columnspan=3, sticky="ew", pady=(0, 17))
+    return entry
+
+
+website_entry = add_field("WEBSITE OR APP", website_var, 1)
+email_entry = add_field("USERNAME OR EMAIL", email_var, 3)
+
+tk.Label(
+    card,
+    text="PASSWORD",
+    bg=SURFACE,
+    fg=MUTED,
+    font=("Helvetica", 9, "bold"),
+).grid(row=5, column=0, sticky="w", pady=(0, 7))
+
+password_entry = ttk.Entry(card, textvariable=password_var, style="Field.TEntry", width=25, show="*")
+password_entry.grid(row=6, column=0, sticky="ew", pady=(0, 20))
+
+reveal_button = ttk.Button(card, text="Show", style="Secondary.TButton", command=toggle_password)
+reveal_button.grid(row=6, column=1, padx=(8, 6), pady=(0, 20))
+ttk.Button(card, text="Generate", style="Secondary.TButton", command=generate_password).grid(
+    row=6, column=2, pady=(0, 20)
 )
-add_button.grid(row=5, column=2, columnspan=2)
 
+ttk.Button(card, text="Copy", style="Secondary.TButton", command=copy_password).grid(
+    row=7, column=0, columnspan=3, sticky="ew", pady=(0, 10)
+)
+ttk.Button(card, text="Save credential", style="App.TButton", command=save_password).grid(
+    row=8, column=0, columnspan=3, sticky="ew"
+)
+
+status_label = tk.Label(
+    outer,
+    text="Ready to secure your accounts",
+    bg=BACKGROUND,
+    fg=MUTED,
+    font=("Helvetica", 9),
+)
+status_label.pack(pady=(15, 0))
+
+website_entry.focus_set()
+window.bind("<Return>", lambda event: save_password())
 window.mainloop()
