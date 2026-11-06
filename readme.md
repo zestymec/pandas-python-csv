@@ -9,8 +9,8 @@
 ![Tkinter](https://img.shields.io/badge/Tkinter-GUI-FF6F00?style=for-the-badge)
 ![Turtle](https://img.shields.io/badge/Turtle-Graphics-2E7D32?style=for-the-badge)
 
-![Progress](https://img.shields.io/badge/Current-Day%2027-e7305b?style=flat-square)
-![Lessons](https://img.shields.io/badge/Lessons%20done-215-9bdeac?style=flat-square)
+![Progress](https://img.shields.io/badge/Current-Day%2030-e7305b?style=flat-square)
+![Lessons](https://img.shields.io/badge/Videos%20completed-226-9bdeac?style=flat-square)
 
 </div>
 
@@ -22,6 +22,7 @@
 - [Projects](#-projects)
 - [Repository Structure](#-repository-structure)
 - [Getting Started](#-getting-started)
+- [Learning Progress](#-learning-progress)
 
 ---
 
@@ -56,11 +57,25 @@
 - Layout managers: `pack()`, `place()` and `grid()`
 - Building a **Miles → Km converter**
 
-### 📅 Day 28 — Pomodoro App *(in progress)* 🍅
+### 📅 Day 28 — Pomodoro App 🍅
 
 - Putting an image into a program with `PhotoImage`
 - The **Canvas** widget: layering images and text
 - Event-driven programming
+
+### 📅 Day 29 — Password Manager Foundations 🔐
+
+- Building a multi-field Tkinter form
+- Using callbacks with buttons
+- Validating user input with `messagebox`
+- Generating secure passwords with Python's `secrets` module
+- Copying generated passwords to the clipboard
+
+### 📅 Day 30 — Errors, Exceptions & JSON *(in progress)* 🧩
+
+- Understanding errors and exception handling
+- Saving structured application data as JSON
+- Improving the Password Manager project
 
 ---
 
@@ -71,7 +86,8 @@
 | 🇺🇸 [**U.S. States Game**](us_states_game/) | Guess all 50 states on a map; missing states are saved to CSV when you exit | `turtle`, `pandas`, CSV |
 | 📻 [**NATO Alphabet**](NATO_Alphabet_project/) | Type a word and get its NATO phonetic spelling | dict comprehension, `iterrows()` |
 | 📏 [**Miles → Km Converter**](day_27/miles_to_km_converter.py) | A small GUI unit converter | `tkinter`, `grid()` |
-| 🍅 [**Pomodoro Timer**](pomodoro_app/) | A focus timer with a tomato UI *(work in progress)* | `tkinter`, `Canvas`, `PhotoImage` |
+| 🍅 [**Pomodoro Timer**](pomodoro_app/) | A focus timer with a tomato UI | `tkinter`, `Canvas`, `PhotoImage` |
+| 🔐 [**Password Manager**](password-manager/) | Generate, copy, validate and save passwords | `tkinter`, callbacks, file handling |
 
 ---
 
@@ -83,6 +99,7 @@ pandas-python-csv/
 ├── 📂 day_27/                  # Tkinter widgets, *args/**kwargs, converter
 ├── 📂 NATO_Alphabet_project/   # NATO phonetic alphabet project
 ├── 📂 pomodoro_app/            # Pomodoro timer (Tkinter + Canvas)
+├── 📂 password-manager/        # Password manager GUI and logo
 ├── 📂 us_states_game/          # U.S. States guessing game (Turtle)
 ├── 📄 main.py                  # Pandas & CSV experiments
 ├── 📊 weather_data.csv         # Sample weather dataset
@@ -106,9 +123,20 @@ pip install -r requirements.txt   # or: pip install pandas
 python NATO_Alphabet_project/main.py
 python us_states_game/main.py
 python pomodoro_app/main.py
+python password-manager/main.py
 ```
 
 > 💡 `tkinter` and `turtle` ship with Python. On Linux you may need `sudo apt install python3-tk`.
+
+---
+
+## 📈 Learning Progress
+
+- **Current milestone:** Day 30
+- **Completed lessons:** Day 28 and Day 29
+- **Course videos completed:** 226
+- **Current focus:** Error handling, exceptions and JSON data storage
+- **Learning style:** Building practical projects while learning Python fundamentals
 
 ---
 
@@ -117,13 +145,4 @@ python pomodoro_app/main.py
 ⭐ **Learning in public, one day at a time.** ⭐
 
 Made with ❤️ by **Umer**
-python dynaim typing it is not availble in other langs to give data new by giving new value
 </div>
-
-
-
-28th day is also done 
-
-225 video done
-
-creating  password manager 

@@ -43,7 +43,13 @@ def save_password():
     web_input.delete(0, END)
     pass_input.delete(0, END)
 
-    
+def copy_password():
+    password = pass_input.get()
+
+    if password:
+        window.clipboard_clear()
+        window.clipboard_append(password)
+        window.update()
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -91,6 +97,12 @@ generate_button = Button(
     command=generate_password
 )
 generate_button.grid(row=4, column=3)
+
+copy_button = Button(
+    text="Copy",
+    command=copy_password
+)
+copy_button.grid(row=4, column=4)
 
 add_button = Button(
     text="Add",
