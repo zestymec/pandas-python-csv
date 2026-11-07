@@ -170,3 +170,14 @@ python password-manager/main.py
 
 Made with ❤️ by **Umer**
 </div>
+
+
+
+key err
+index err
+catching expection
+
+try 
+excpet
+else
+finally
