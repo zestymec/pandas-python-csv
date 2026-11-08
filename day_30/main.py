@@ -14,5 +14,5 @@ else:
     print(content)
 finally:
     file.close()
-    print("file is closed")
-    raise TypeError("this errni made")
+    print(f"{file}file is closed")
+    raise TypeError("this error come because i raise it thorough rise (typeerr)")
