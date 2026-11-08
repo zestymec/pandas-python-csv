@@ -63,21 +63,24 @@ def save_password():
     }
     file_path = os.path.join(os.path.dirname(__file__), "data.json")
     try:
-        with open(file_path, "r", encoding="utf-8") as file:
-        
-            data = json.load(file)
-            # print(data)
-            data.update(new_data)
+        try:
+            with open(file_path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            data = {}
+
+        data.update(new_data)
+
         with open(file_path, "w", encoding="utf-8") as file:
-            json.dump(
-                                data , file , indent=4
-                        )
+            json.dump(data, file, indent=4)
 
-
-            # file.write(f"Website: {website} | Email: {email} | Password: {password}\n")
-    except OSError as error:
+    except (OSError, json.JSONDecodeError) as error:
         set_status("Unable to save credentials", ERROR)
-        messagebox.showerror("Save failed", f"Could not write to the vault:\n{error}", parent=window)
+        messagebox.showerror(
+            "Save failed",
+            f"Could not save credentials:\n{error}",
+            parent=window,
+        )
         return
 
     website_var.set("")
