@@ -55,11 +55,21 @@ def save_password():
     )
     if not confirmed:
         return
-
+    new_data = {
+        website:{
+            "email": email ,
+            "password": password,
+    }
+    }
     file_path = os.path.join(os.path.dirname(__file__), "data.json")
     try:
-        with open(file_path, "a", encoding="utf-8") as file:
-            file.write(f"Website: {website} | Email: {email} | Password: {password}\n")
+        with open(file_path, "w", encoding="utf-8") as file:
+            json.dump(
+                    new_data , file , indent=4
+            )
+
+
+            # file.write(f"Website: {website} | Email: {email} | Password: {password}\n")
     except OSError as error:
         set_status("Unable to save credentials", ERROR)
         messagebox.showerror("Save failed", f"Could not write to the vault:\n{error}", parent=window)
