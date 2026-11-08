@@ -1,18 +1,69 @@
 <div align="center">
 
-# 🐼 Pandas, CSV & Tkinter — Python Learning Journey
+# Python GUI Projects: Pandas, CSV & Tkinter
 
-**Working with data files, comprehensions, and building desktop GUIs in Python**
+### A hands-on Python learning portfolio featuring desktop GUI applications, data analysis, CSV automation, JSON storage, and secure password management.
 
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Tkinter](https://img.shields.io/badge/Tkinter-GUI-FF6F00?style=for-the-badge)
-![Turtle](https://img.shields.io/badge/Turtle-Graphics-2E7D32?style=for-the-badge)
-
-![Progress](https://img.shields.io/badge/Current-Day%2030-e7305b?style=flat-square)
-![Lessons](https://img.shields.io/badge/Videos%20completed-226-9bdeac?style=flat-square)
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Tkinter](https://img.shields.io/badge/Tkinter-Desktop%20GUI-FF6F00?style=for-the-badge)](https://docs.python.org/3/library/tkinter.html)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Status](https://img.shields.io/badge/Status-Active%20Learning-e7305b?style=for-the-badge)](https://github.com/zestymec/pandas-python-csv)
 
 </div>
+
+---
+
+## About This Portfolio
+
+This repository documents my practical journey of learning Python by building real-world projects.
+
+The projects demonstrate:
+
+- Python fundamentals and clean problem-solving
+- CSV and JSON file handling
+- Data analysis with Pandas
+- Desktop GUI development with Tkinter
+- Exception handling and input validation
+- Event-driven programming
+- Modular functions and reusable logic
+- Building user-focused interfaces
+
+---
+
+## Featured Project: Vault Password Manager
+
+[Vault Password Manager](password-manager/) is a native Python desktop application built with Tkinter.
+
+It provides a clean dark-themed interface for generating, saving, searching, and copying login credentials.
+
+### Key Features
+
+- Secure password generation using Python's `secrets` module
+- Save credentials to a local JSON file
+- Search saved credentials by website name
+- Display saved email and password in a native popup
+- Show and hide password visibility
+- Copy passwords to the clipboard
+- Input validation and confirmation dialogs
+- Error handling for missing or invalid JSON files
+- Responsive desktop UI using Tkinter and ttk
+
+### Technologies Used
+
+- Python 3
+- Tkinter and ttk
+- JSON
+- `secrets`
+- File handling
+- Exception handling
+
+### Run the Password Manager
+
+```bash
+python password-manager/main.py
+```
+
+The first launch creates `password-manager/data.txt` when the first credential is saved. The local data file contains credentials in plain text, so keep it private and do not commit it to a public repository.
 
 ---
 
@@ -200,4 +251,14 @@ I M TAKING THIS ERRS I=WRITE NOW
 
 
 
-232 done 
+233 done day 30 done
+
+Recruiters ke liye sabse important improvements:
+
+1. README ke start mein clear project summary.
+2. Featured project section.
+3. Technologies and skills clearly visible.
+4. Installation and run commands.
+5. Security disclaimer.
+6. `data.txt` ko `data.json` se correct karna.
+7. Project links aur searchable keywords: `Python`, `Tkinter`, `Pandas`, `JSON`, `CSV`, `desktop GUI`, `exception handling`.
