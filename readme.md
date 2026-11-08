@@ -193,3 +193,6 @@ for update use json.update()
 
 
 how to load and read
+
+
+I M TAKING THIS ERRS I=WRITE NOW

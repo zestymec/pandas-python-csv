@@ -63,11 +63,12 @@ def save_password():
     }
     file_path = os.path.join(os.path.dirname(__file__), "data.json")
     try:
-        with open(file_path, "w", encoding="utf-8") as file:
-            json.dump(
-                    new_data , file , indent=4
-            )
-
+        with open(file_path, "r", encoding="utf-8") as file:
+        #     json.dump(
+        #             new_data , file , indent=4
+        #     )
+            data = json.load(file)
+            print(data)
 
             # file.write(f"Website: {website} | Email: {email} | Password: {password}\n")
     except OSError as error:
