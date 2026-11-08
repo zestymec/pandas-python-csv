@@ -99,6 +99,48 @@ def set_status(message, color=TEXT):
     window.after(4000, lambda: status_label.configure(text="Ready to secure your accounts", foreground=MUTED))
 
 
+def search_password():
+    website = search_var.get().strip()
+
+    if not website:
+        messagebox.showwarning(
+            "Search",
+            "Please enter a website name.",
+            parent=window,
+        )
+        return
+
+    file_path = os.path.join(os.path.dirname(__file__), "data.json")
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {}
+    except OSError as error:
+        messagebox.showerror("Search failed", str(error), parent=window)
+        return
+
+    account = data.get(website)
+
+    if account is None:
+        messagebox.showwarning(
+            "Not found",
+            f"No saved login found for {website}.",
+            parent=window,
+        )
+        return
+
+    messagebox.askyesno(
+        "Saved credentials",
+        f"Website: {website}\n\n"
+        f"Email: {account['email']}\n"
+        f"Password: {account['password']}\n\n"
+        "Do you want to close this message?",
+        parent=window,
+    )
+
+
 window = tk.Tk()
 window.title("Vault • Password Manager")
 window.configure(bg=BACKGROUND)
@@ -137,6 +179,7 @@ style.configure(
 website_var = tk.StringVar()
 email_var = tk.StringVar(value="@email.com")
 password_var = tk.StringVar()
+search_var = tk.StringVar()
 
 outer = tk.Frame(window, bg=BACKGROUND, padx=34, pady=30)
 outer.pack()
@@ -215,6 +258,22 @@ ttk.Button(card, text="Copy", style="Secondary.TButton", command=copy_password).
 ttk.Button(card, text="Save credential", style="App.TButton", command=save_password).grid(
     row=8, column=0, columnspan=3, sticky="ew"
 )
+
+search_frame = tk.Frame(outer, bg=BACKGROUND)
+search_frame.pack(fill="x", pady=(10, 0))
+
+tk.Label(
+    search_frame,
+    text="SEARCH LOGIN",
+    bg=BACKGROUND,
+    fg=TEXT,
+    font=("Helvetica", 10, "bold"),
+).pack(side="left", anchor="w")
+
+search_entry = ttk.Entry(search_frame, textvariable=search_var, style="Field.TEntry", width=30)
+search_entry.pack(side="left", fill="x", expand=True, padx=(0, 10))
+
+ttk.Button(search_frame, text="Search", style="App.TButton", command=search_password).pack(side="left")
 
 status_label = tk.Label(
     outer,
