@@ -3,6 +3,7 @@ import secrets
 import string
 import tkinter as tk
 from tkinter import messagebox, ttk
+import json 
 
 
 BACKGROUND = "#101827"
@@ -55,7 +56,7 @@ def save_password():
     if not confirmed:
         return
 
-    file_path = os.path.join(os.path.dirname(__file__), "data.txt")
+    file_path = os.path.join(os.path.dirname(__file__), "data.json")
     try:
         with open(file_path, "a", encoding="utf-8") as file:
             file.write(f"Website: {website} | Email: {email} | Password: {password}\n")
