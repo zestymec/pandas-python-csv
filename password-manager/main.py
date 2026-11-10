@@ -6,12 +6,12 @@ from tkinter import messagebox, ttk
 import json 
 
 
-BACKGROUND = "#101827"
-SURFACE = "#182235"
+BACKGROUND = "#1244A0"
+SURFACE = "#305291"
 SURFACE_ALT = "#202d43"
 TEXT = "#f4f7fb"
 MUTED = "#9aa9bd"
-ACCENT = "#6c8cff"
+ACCENT = "#8da5fc"
 ACCENT_HOVER = "#829cff"
 SUCCESS = "#5ed6a0"
 ERROR = "#ff8c8c"
