@@ -1,55 +1,41 @@
-# import os
-# import smtplib
-# from email.message import EmailMessage
-# from pathlib import Path
+import datetime as dt
+import os
+import random
+import smtplib
+from pathlib import Path
+
+from dotenv import load_dotenv
 
 
-
-# SMTP_HOST = "smtp.gmail.com"
-# SMTP_PORT = 587
-
-# load_dotenv(Path(__file__).with_name(".env"))
+PROJECT_DIR = Path(__file__).resolve().parent
+load_dotenv(PROJECT_DIR / ".env")
 
 
-# def required_setting(name: str) -> str:
-#     value = os.getenv(name)
-#     if not value:
-#         raise RuntimeError(
-#             f"Missing required environment variable: {name}. "
-#             "Fill in your values in the .env file."
-#         )
-#     return value
+def send_monday_quote() -> None:
+    if dt.datetime.now().weekday() != 0:
+        print("Today is not Monday. No email was sent.")
+        return
+
+    sender = os.getenv("MAIL_SENDER")
+    password = os.getenv("MAIL_PASSWORD")
+    recipient = os.getenv("MAIL_RECIPIENT")
+
+    if not sender or not password or not recipient:
+        raise RuntimeError(
+            "Set MAIL_SENDER, MAIL_PASSWORD, and MAIL_RECIPIENT in .env"
+        )
+
+    with (PROJECT_DIR / "quotes.txt").open(encoding="utf-8") as file:
+        quote = random.choice(file.readlines()).strip()
+
+    message = f"Subject: Monday Motivation\n\n{quote}"
+    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
+        connection.starttls()
+        connection.login(sender, password)
+        connection.sendmail(sender, recipient, message)
+
+    print("Random quote sent successfully.")
 
 
-# def send_email() -> None:
-#     sender = required_setting("MAIL_SENDER")
-#     password = required_setting("MAIL_PASSWORD")
-#     recipient = required_setting("MAIL_RECIPIENT")
-
-#     message = EmailMessage()
-#     message["Subject"] = "Hello"
-#     message["From"] = sender
-#     message["To"] = recipient
-#     message.set_content("This is the body")
-
-#     with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as connection:
-#         connection.starttls()
-#         connection.login(user=sender, password=password)
-#         connection.send_message(message)
-
-
-# if __name__ == "__main__":
-#     send_email()
-
-
-
-import datetime as dt 
-
-now = dt.datetime.now()
-year = now.year
-month = now.month
-day_of_week = now.weekday()
-print(day_of_week)
-
-date_of_birth = dt.datetime(year=2026, month=11 , day = 11 , hour=15 , minute= 45)
-print(date_of_birth)
+if __name__ == "__main__":
+    send_monday_quote()

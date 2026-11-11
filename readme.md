@@ -289,3 +289,7 @@ mail recieved succesfully
 date nd time mangement 
 
 246 done
+
+moday quotes sender 
+
+247 done 
