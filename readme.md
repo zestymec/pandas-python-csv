@@ -263,10 +263,25 @@ Recruiters ke liye sabse important improvements:
 6. `data.txt` ko `data.json` se correct karna.
 7. Project links aur searchable keywords: `Python`, `Tkinter`, `Pandas`, `JSON`, `CSV`, `desktop GUI`, `exception handling`.
 
-
-
-
-
-
+/n
+242 done 
 day 31 started
 capstone project
+day 31 done 
+day 32 started 
+
+email smtp and the datetime module
+
+
+automated birthday wisher 
+
+243 done 
+Simple Mail Transfer Protocol
+
+244 done 
+smtp and how to sends mail with its help hahahhhahah
+
+
+mail recieved succesfully 
+
+245 done 
