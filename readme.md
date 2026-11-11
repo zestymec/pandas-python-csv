@@ -262,3 +262,11 @@ Recruiters ke liye sabse important improvements:
 5. Security disclaimer.
 6. `data.txt` ko `data.json` se correct karna.
 7. Project links aur searchable keywords: `Python`, `Tkinter`, `Pandas`, `JSON`, `CSV`, `desktop GUI`, `exception handling`.
+
+
+
+
+
+
+day 31 started
+capstone project
