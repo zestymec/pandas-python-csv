@@ -292,4 +292,13 @@ date nd time mangement
 
 moday quotes sender 
 
-247 done 
+247 done
+
+
+bdy wisher 
+249 done 
+
+now github actions applying on it 
+
+
+250 done 
