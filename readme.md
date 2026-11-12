@@ -337,4 +337,13 @@ kanye.rest project of api
 
 split
 
-257 done
+258 done
+
+
+day 34 started
+
+trivia database
+api parametre switching inputs
+a quixler app and using tkinter 
+
+259 done 
