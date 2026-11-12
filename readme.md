@@ -323,8 +323,17 @@ api request
 
 254 done 
 
+respose codes 
+1 = hold on
+2 = here you go 
+3 = no permision go away 
+4 = you secrewed up 
+5 = i screwed up 
 
+day 255 done 
 
+day 256
+kanye.rest project of api 
 
 
 
