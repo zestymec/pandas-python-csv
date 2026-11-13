@@ -1,4 +1,5 @@
 from tkinter import *
+from pathlib import Path
 import requests
 
 
@@ -14,13 +15,14 @@ window = Tk()
 window.title("Kanye Says...")
 window.config(padx=50, pady=50)
 
+asset_dir = Path(__file__).resolve().parent
 canvas = Canvas(width=300, height=414)
-background_img = PhotoImage(file="/Users/apple/umeraziz/pandas-python-csv/kanye-quotes-end/background.png")
+background_img = PhotoImage(file=asset_dir / "background.png")
 canvas.create_image(150, 207, image=background_img)
 quote_text = canvas.create_text(150, 207, text="Kanye Quote Goes HERE", width=250, font=("Arial", 30, "bold"), fill="white")
 canvas.grid(row=0, column=0)
 
-kanye_img = PhotoImage(file="/Users/apple/umeraziz/pandas-python-csv/kanye-quotes-end/kanye.png")
+kanye_img = PhotoImage(file=asset_dir / "kanye.png")
 kanye_button = Button(image=kanye_img, highlightthickness=0, command=get_quote)
 kanye_button.grid(row=1, column=0)
 
