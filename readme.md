@@ -351,3 +351,12 @@ api parametre switching inputs
 a quixler app and using tkinter 
 
 259 done 
+
+
+api seted up in the project 
+
+261 done
+
+learned html entities
+
+
