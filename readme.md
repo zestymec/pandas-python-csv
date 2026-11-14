@@ -1,6 +1,6 @@
 <div align="center">
 
-# Python GUI Projects: Pandas, CSV & Tkinter
+# Python GUI Projects: Pandas, CSV & Tkinter f
 
 ### A hands-on Python learning portfolio featuring desktop GUI applications, data analysis, CSV automation, JSON storage, and secure password management.
 
