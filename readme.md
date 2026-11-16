@@ -364,3 +364,20 @@ learned html entities
 class base tkinter ui
 
 pyhton types type hints and arrows 
+
+
+267 done
+quizler app done 
+
+day 34 done 
+
+
+day 35
+api keys , Authentication , env and sms
+
+api authenticate 
+twilio
+rain allert application
+
+268 done 
+
