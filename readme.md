@@ -360,3 +360,7 @@ api seted up in the project
 learned html entities
 
 
+263 done 
+class base tkinter ui
+
+pyhton types type hints and arrows 
