@@ -396,6 +396,19 @@ api documentation
 
 sms via the twilio Api 
 
+274 done
+python anywhere to automate
+
+275
+enviroment variables in detail
 
 
+api world
 
+276 done 
+
+github actions 
+
+aytomated the project of sms sender of weather 
+
+day 35
