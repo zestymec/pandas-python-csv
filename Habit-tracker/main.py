@@ -46,3 +46,27 @@ print(graph_response.text)
 # graph url : https://pixe.la/v1/users/umera/graphs/graph1.html
 
 print(f"Graph URL: https://pixe.la/v1/users/{UserName}/graphs/{graph_config['id']}.html")
+
+
+postpixel_endpoint = (
+    f"{pixela_endpoint}/{UserName}/graphs/{graph_config['id']}/pixels"
+)
+
+
+postpixel_config = {
+    "date": "20261117",
+    "quantity": "1"
+}
+
+response_post = requests.post(
+    url=postpixel_endpoint,
+    json=postpixel_config,
+    headers=headers
+)
+
+print(response_post.status_code)
+print(response_post.text)
+
+
+# Pixel banane ke liye Pixela Supporter program join karna hoga. Warna Pixela par new pixels create nahi honge.
+
