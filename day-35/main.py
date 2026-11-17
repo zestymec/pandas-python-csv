@@ -1,12 +1,30 @@
+import os
+from pathlib import Path
+
 import requests
-print("umer")
+from dotenv import load_dotenv
 
 
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
-# http://api.openweathermap.org/data/2.5/weather?q=lahore&appid=a5ba5633dcb1776654eb9b1abb93537c
+api_key = os.getenv("API_KEY")
+if not api_key:
+    raise RuntimeError("Set API_KEY in day-35/.env")
 
+params = {
+    "lat": 31.52,
+    "lon": 74.32,
+    "appid": api_key,
+    "units": "metric"
+}
 
-# https://api.openweathermap.org/data/2.5/weather?q={city%20name}&appid={API%20key}
+response = requests.get(
+    "https://api.openweathermap.org/data/2.5/weather",
+    params=params
+)
 
+print(response.status_code)
 
-# https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API%20key}
+data = response.json()
+
+print(data)
