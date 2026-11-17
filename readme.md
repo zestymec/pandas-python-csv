@@ -425,4 +425,12 @@ get
 post 
 put and delet
 google sheets api 
+advance authentication using http header
+
+3ways of api key
+
+apikey
+x-api-key
+Authorization
+284 done 
 
