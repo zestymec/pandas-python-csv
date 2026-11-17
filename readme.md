@@ -412,3 +412,17 @@ github actions
 aytomated the project of sms sender of weather 
 
 day 35 done 
+ANOTHER STCKS NEWS PROJECT 
+DAY 36 DONE 
+
+day 37 started
+
+advanced authentication and post / put/delet reqss
+habittracker app
+and use pixela 
+http reqs
+get
+post 
+put and delet
+google sheets api 
+
