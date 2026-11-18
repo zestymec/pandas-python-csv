@@ -1,437 +1,324 @@
 <div align="center">
 
-# Python GUI Projects: Pandas, CSV & Tkinter f
+# Python Portfolio: Data, APIs, Automation and Desktop Apps
 
-### A hands-on Python learning portfolio featuring desktop GUI applications, data analysis, CSV automation, JSON storage, and secure password management.
+### A hands-on collection of Python projects covering pandas, CSV processing, REST APIs, Tkinter GUIs, automation, JSON storage and third-party integrations.
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Tkinter](https://img.shields.io/badge/Tkinter-Desktop%20GUI-FF6F00?style=for-the-badge)](https://docs.python.org/3/library/tkinter.html)
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![Status](https://img.shields.io/badge/Status-Active%20Learning-e7305b?style=for-the-badge)](https://github.com/zestymec/pandas-python-csv)
+[![Tkinter](https://img.shields.io/badge/Tkinter-Desktop%20GUI-FF6F00?style=for-the-badge)](https://docs.python.org/3/library/tkinter.html)
+[![REST APIs](https://img.shields.io/badge/REST-API%20Integration-009688?style=for-the-badge)](https://restfulapi.net/)
+[![Learning](https://img.shields.io/badge/Status-Active%20Learning-e7305b?style=for-the-badge)](https://github.com/zestymec/pandas-python-csv)
+
+[Projects](#featured-projects) • [Skills](#skills-demonstrated) • [Getting Started](#getting-started) • [Repository Structure](#repository-structure) • [Security](#security-notes)
 
 </div>
 
 ---
 
-## About This Portfolio
+## About This Repository
 
-This repository documents my practical journey of learning Python by building real-world projects.
+This repository is a practical Python learning portfolio built while progressing through applied programming projects. It demonstrates how Python can be used for data analysis, desktop application development, file management, API integration, email automation, cloud-style scheduled workflows and secure configuration handling.
 
-The projects demonstrate:
+The project collection emphasizes:
 
-- Python fundamentals and clean problem-solving
-- CSV and JSON file handling
-- Data analysis with Pandas
-- Desktop GUI development with Tkinter
-- Exception handling and input validation
-- Event-driven programming
-- Modular functions and reusable logic
-- Building user-focused interfaces
-
----
-
-## Featured Project: Vault Password Manager
-
-[Vault Password Manager](password-manager/) is a native Python desktop application built with Tkinter.
-
-It provides a clean dark-themed interface for generating, saving, searching, and copying login credentials.
-
-### Key Features
-
-- Secure password generation using Python's `secrets` module
-- Save credentials to a local JSON file
-- Search saved credentials by website name
-- Display saved email and password in a native popup
-- Show and hide password visibility
-- Copy passwords to the clipboard
-- Input validation and confirmation dialogs
-- Error handling for missing or invalid JSON files
-- Responsive desktop UI using Tkinter and ttk
-
-### Technologies Used
-
-- Python 3
-- Tkinter and ttk
-- JSON
-- `secrets`
-- File handling
-- Exception handling
-
-### Run the Password Manager
-
-```bash
-python password-manager/main.py
-```
-
-The first launch creates `password-manager/data.txt` when the first credential is saved. The local data file contains credentials in plain text, so keep it private and do not commit it to a public repository.
+- Writing clear, reusable Python functions
+- Reading and filtering CSV data with Pandas
+- Building desktop interfaces with Tkinter and Turtle
+- Handling exceptions and invalid input
+- Working with JSON, TXT and CSV files
+- Consuming REST APIs and processing HTTP responses
+- Managing API keys and credentials with environment variables
+- Sending automated email notifications
+- Applying authentication, POST, PUT and DELETE concepts
+- Building terminal and GUI applications from requirements
 
 ---
 
-## 📖 Table of Contents
+## Featured Projects
 
-- [What I Learned](#-what-i-learned)
-- [Projects](#-projects)
-- [Password Manager](#-password-manager)
-- [Repository Structure](#-repository-structure)
-- [Getting Started](#-getting-started)
-- [Learning Progress](#-learning-progress)
+### Password Manager
 
----
+[![Project](https://img.shields.io/badge/Project-Password%20Manager-305291?style=flat-square)](password-manager/)
 
-## 🧠 What I Learned
+A desktop credential manager built with Python, Tkinter and JSON. It includes password generation, clipboard support, credential search, visibility controls, input validation and a custom dark-themed interface.
 
-### 📅 Day 25 — Working with CSV Data & Pandas
+- Generates strong 16-character passwords using Python's `secrets` module
+- Saves and searches website credentials in a local JSON file
+- Uses Tkinter/ttk widgets and native confirmation dialogs
+- Resolves file paths relative to the application
+- Handles missing files and malformed JSON gracefully
 
-- Reading data files with Python's built-in `csv` library
-- Getting started with **pandas**: `read_csv()`
-- **Series** vs **DataFrame**, and converting between them
-- Statistics: mean, **median**, **mode** and more
-- Selecting and filtering **rows**, **columns** and series
-- Building a DataFrame from scratch and saving it to CSV
-- Handling large files (e.g. the 2018 Central Park Squirrel Census)
+**Technologies:** Python, Tkinter, ttk, JSON, `secrets`, exception handling
 
-### 📅 Day 26 — List & Dictionary Comprehensions
+### U.S. States Quiz
 
-- Python sequences (lists, strings, ranges, tuples)
-- **List comprehension**: `[new_item for item in list if condition]`
-- **Dictionary comprehension**: `{key: value for (key, value) in dict.items()}`
-- Looping over DataFrames with `iterrows()`
-- Intro to the **NATO phonetic alphabet** and building the NATO project
+[![Project](https://img.shields.io/badge/Project-U.S.%20States%20Game-3776AB?style=flat-square)](us_states_game/)
 
-### 📅 Day 27 — Tkinter, `*args` & `**kwargs`
+A Turtle-based geography game that places correctly guessed states on a map and exports missed states to a CSV file.
 
-- **Tkinter**, Python's built-in GUI library
-- Widgets: `Label`, `Button`, `Entry`, `Text`, `Spinbox`, `Scale`, `Checkbutton`, `Radiobutton`, `Listbox`
-- Advanced function arguments:
-  - Default arguments
-  - `*args`: any number of positional arguments
-  - `**kwargs`: any number of keyword arguments
-- Layout managers: `pack()`, `place()` and `grid()`
-- Building a **Miles → Km converter**
+**Technologies:** Python, Turtle, Pandas, CSV
 
-### 📅 Day 28 — Pomodoro App 🍅
+### Stock News Monitoring
 
-- Putting an image into a program with `PhotoImage`
-- The **Canvas** widget: layering images and text
-- Event-driven programming
+[![Project](https://img.shields.io/badge/Project-Stock%20News%20Monitoring-009688?style=flat-square)](stock-News-Monitoring-Project/)
 
-### 📅 Day 29 — Password Manager Foundations 🔐
+Monitors stock-price changes through Alpha Vantage, retrieves relevant articles from NewsAPI and sends an email summary when the configured market-change threshold is met.
 
-- Building a multi-field Tkinter form
-- Using callbacks with buttons
-- Validating user input with `messagebox`
-- Generating 16-character passwords with Python's `secrets` module
-- Copying generated passwords to the clipboard
-- Designing a polished dark-mode desktop interface
+**Technologies:** Python, REST APIs, HTTP requests, SMTP, environment variables
 
-### 📅 Day 30 — Errors, Exceptions & JSON *(in progress)* 🧩
+### Automated Birthday Wisher
 
-- Understanding errors and exception handling
-- Saving structured application data as JSON
-- Improving the Password Manager experience and reliability
+[![Project](https://img.shields.io/badge/Project-Birthday%20Wisher-e7305b?style=flat-square)](Auto-bd-wisher/)
+
+Compares birthday records with the current date and sends a personalized email using locally stored templates and CSV data.
+
+**Technologies:** Python, Pandas, SMTP, datetime, CSV, email templates
+
+### Quizzler App
+
+[![Project](https://img.shields.io/badge/Project-Quizzler-375362?style=flat-square)](quizzler-app/)
+
+A class-based Tkinter trivia application that retrieves questions from an API and presents a scored, interactive quiz.
+
+**Technologies:** Python, Tkinter, REST API, OOP, type hints, HTML entity handling
 
 ---
 
-## 🚀 Projects
+## Project Index
 
-| Project | Description | Concepts |
+| Project | Description | Core Concepts |
 |:--|:--|:--|
-| 🇺🇸 [**U.S. States Game**](us_states_game/) | Guess all 50 states on a map; missing states are saved to CSV when you exit | `turtle`, `pandas`, CSV |
-| 📻 [**NATO Alphabet**](NATO_Alphabet_project/) | Type a word and get its NATO phonetic spelling | dict comprehension, `iterrows()` |
-| 📏 [**Miles → Km Converter**](day_27/miles_to_km_converter.py) | A small GUI unit converter | `tkinter`, `grid()` |
-| 🍅 [**Pomodoro Timer**](pomodoro_app/) | A focus timer with a tomato UI | `tkinter`, `Canvas`, `PhotoImage` |
-| 🔐 [**Vault Password Manager**](password-manager/) | A focused desktop vault for generating, copying and saving credentials | `tkinter`, `ttk`, `secrets`, file handling |
+| [Password Manager](password-manager/) | Generate, copy, save and search credentials in a desktop interface | Tkinter, JSON, `secrets`, validation |
+| [U.S. States Game](us_states_game/) | Guess U.S. states and place them on a Turtle map | Turtle, Pandas, CSV |
+| [NATO Alphabet](NATO_Alphabet_project/) | Convert words into their NATO phonetic alphabet | Pandas, dictionary comprehension |
+| [Pomodoro Timer](pomodoro_app/) | Desktop focus timer with an image-based interface | Tkinter, Canvas, event-driven UI |
+| [Miles to Kilometers](day_27/miles_to_km_converter.py) | Convert miles to kilometers in a Tkinter GUI | Tkinter, widgets, `grid()` |
+| [Kanye Quote App](kanye-quotes-end/) | Display random quotes returned by a public API | REST API, Tkinter |
+| [Trivia Quiz](quizzler-app/) | Quiz application using the Open Trivia API | Tkinter, OOP, API requests |
+| [Weather Alert](sms-sender/) | Check forecast conditions and send an email alert | OpenWeather API, SMTP, dotenv |
+| [Stock News Monitor](stock-News-Monitoring-Project/) | Monitor stock movement and email relevant news | Alpha Vantage, NewsAPI, SMTP |
+| [Birthday Wisher](Auto-bd-wisher/) | Automate date-based birthday emails | datetime, CSV, Pandas, SMTP |
+| [Habit Tracker](Habit-tracker/) | Practice creating and updating pixels through Pixela | HTTP POST, REST authentication |
+| [Japanese Flash Cards](capstone_projet/) | Learn vocabulary using a Tkinter flash-card interface | Tkinter, Pandas, CSV |
+| [ISS Overhead](Solution+-+issoverhead-end/) | Detect ISS visibility and nighttime conditions | REST APIs, SMTP, scheduling |
+| [Sunrise/Sunset API](day-33/) | Retrieve and process sunrise and sunset data | API parameters, JSON, datetime |
+| [Pandas Practice](main_foolder/) | Explore weather and squirrel census datasets | Pandas, filtering, statistics |
 
 ---
 
-## 🔐 Password Manager
+## Skills Demonstrated
 
-The Password Manager is a compact desktop vault built with Python and Tkinter. Its redesigned interface uses a dark, card-based layout to keep credential entry focused and easy to scan.
+### Python Fundamentals
 
-### Features
+- Variables, control flow and functions
+- List and dictionary comprehensions
+- Object-oriented programming
+- File and exception handling
+- Type hints and class-based application structure
+- Unit conversion and date/time calculations
 
-- Secure 16-character password generation using `secrets`
-- Show and hide password visibility on demand
-- One-click clipboard copying
-- Website, username and password validation
-- Confirmation before credentials are saved
-- Clear success and error feedback inside the app
-- Credentials stored in the project's local `password-manager/data.txt` file
-- File paths resolved relative to the application, so it can be launched from any directory
+### Data and File Processing
 
-### Run it
+- CSV reading, filtering and exporting with Pandas
+- DataFrame and Series operations
+- Working with JSON using `json.load()` and `json.dump()`
+- Building datasets and saving processed results
+- Managing application data with relative file paths
 
-```bash
-python password-manager/main.py
-```
+### Desktop and GUI Development
 
-The first launch creates `password-manager/data.txt` when the first credential is saved. The local data file contains credentials in plain text, so keep it private and do not commit it to a public repository.
+- Tkinter widgets and layout managers
+- Turtle graphics
+- Canvas-based interfaces
+- Event-driven programming
+- Input validation and native dialogs
+- Reusable UI components
+
+### APIs and Integrations
+
+- REST API requests with `requests`
+- API query parameters and response status codes
+- HTTP GET and POST operations
+- API authentication concepts
+- Alpha Vantage and NewsAPI integrations
+- OpenWeather and Open Trivia API integrations
+- SMTP email delivery
+
+### Automation and Operations
+
+- Scheduled scripts and repeated monitoring
+- Environment variable configuration
+- GitHub Actions concepts
+- PythonAnywhere deployment concepts
+- Secure handling of API keys and app passwords
 
 ---
 
-## 🗂 Repository Structure
+## Getting Started
 
-```
-pandas-python-csv/
-├── 📂 day_26/                  # List & dictionary comprehension practice
-├── 📂 day_27/                  # Tkinter widgets, *args/**kwargs, converter
-├── 📂 NATO_Alphabet_project/   # NATO phonetic alphabet project
-├── 📂 pomodoro_app/            # Pomodoro timer (Tkinter + Canvas)
-├── 📂 password-manager/        # Vault password manager, logo and local data
-├── 📂 us_states_game/          # U.S. States guessing game (Turtle)
-├── 📄 main.py                  # Pandas & CSV experiments
-├── 📊 weather_data.csv         # Sample weather dataset
-├── 📊 2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv
-└── 📄 requirements.txt
-```
+### Prerequisites
 
----
+- Python 3.9 or later
+- `pip`
+- Tkinter support for GUI applications
+- Internet access for projects that use external APIs
 
-## ⚙️ Getting Started
+### Installation
 
 ```bash
 git clone https://github.com/zestymec/pandas-python-csv.git
 cd pandas-python-csv
 
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate
 
-python NATO_Alphabet_project/main.py
-python us_states_game/main.py
-python pomodoro_app/main.py
-python password-manager/main.py
+python -m pip install --upgrade pip
+python -m pip install pandas requests python-dotenv
 ```
 
-> 💡 `tkinter` and `turtle` ship with Python. On Linux you may need `sudo apt install python3-tk`.
+On Linux, Tkinter may need to be installed through your system package manager:
+
+```bash
+sudo apt install python3-tk
+```
 
 ---
 
-## 📈 Learning Progress
+## Run the Applications
 
-- **Current milestone:** Day 30
-- **Completed lessons:** Day 28 and Day 29
-- **Course videos completed:** 226
-- **Current focus:** Error handling, exceptions and JSON data storage
-- **Learning style:** Building practical projects while learning Python fundamentals
+```bash
+# Password Manager
+python password-manager/main.py
+
+# U.S. States Game
+python us_states_game/main.py
+
+# NATO Alphabet
+python NATO_Alphabet_project/main.py
+
+# Pomodoro Timer
+python pomodoro_app/main.py
+
+# Trivia Quiz
+python quizzler-app/main.py
+
+# Miles to Kilometers
+python day_27/miles_to_km_converter.py
+```
+
+Projects containing API or email integrations may require their own environment variables and dependencies.
+
+For example:
+
+```bash
+python -m pip install -r stock-News-Monitoring-Project/requirements.txt
+python -m pip install -r Auto-bd-wisher/requirements.txt
+```
+
+---
+
+## Environment Configuration
+
+Never commit real API keys, passwords or personal credentials.
+
+Create a `.env` file based on the provided examples. For example:
+
+```bash
+cp stock-News-Monitoring-Project/.env.example \
+   stock-News-Monitoring-Project/.env
+```
+
+The stock news project uses:
+
+```env
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
+NEWS_API_KEY=your_news_api_key
+MAIL_SENDER=your_email_address
+MAIL_PASSWORD=your_app_password
+MAIL_RECIPIENT=your_recipient_email
+```
+
+Additional projects may use `API_KEY`, `MAIL_SENDER`, `MAIL_PASSWORD` or `MAIL_RECIPIENT`. Review each project entry before running it.
+
+---
+
+## Repository Structure
+
+```text
+pandas-python-csv/
+├── password-manager/                 # Tkinter credential manager
+├── us_states_game/                   # Turtle map guessing game
+├── NATO_Alphabet_project/            # NATO phonetic alphabet converter
+├── pomodoro_app/                     # Pomodoro timer
+├── quizzler-app/                     # API-powered trivia GUI
+├── kanye-quotes-end/                 # Random quote API application
+├── stock-News-Monitoring-Project/    # Stock and news email alerts
+├── Auto-bd-wisher/                   # Automated birthday emails
+├── Habit-tracker/                    # Pixela HTTP API practice
+├── sms-sender/                       # Weather email alerts
+├── capstone_projet/                  # Japanese flash-card application
+├── Solution+-+issoverhead-end/       # ISS notification automation
+├── day_26/                           # Comprehensions and Pandas practice
+├── day_27/                           # Tkinter widgets and GUI practice
+├── day_30/                           # Exceptions and file handling practice
+├── day-33/                           # Sunrise/sunset API practice
+├── main_foolder/                     # Pandas datasets and examples
+└── readme.md
+```
+
+---
+
+## Security Notes
+
+- API keys and email passwords must be loaded from environment variables or local secret configuration.
+- The password manager stores credentials locally in `password-manager/data.json` and is an educational project, not a replacement for a professional password vault.
+- `data.json` does not encrypt stored credentials. Do not commit real usernames or passwords.
+- A Gmail or Google Workspace account may require an app password instead of a normal account password.
+- External API rate limits and service availability can affect project behavior.
+
+---
+
+## Learning Outcomes
+
+This portfolio demonstrates progression across:
+
+1. Python syntax and core programming concepts
+2. Data analysis and CSV processing with Pandas
+3. Tkinter and Turtle desktop application development
+4. JSON persistence and exception handling
+5. REST API consumption and authentication
+6. SMTP email automation
+7. Environment variable management
+8. Scheduled and cloud-based script execution
+
+---
+
+## Future Improvements
+
+- Add automated tests for core application logic
+- Introduce a root-level dependency manifest
+- Replace absolute image paths with project-relative paths
+- Add encrypted storage to the password manager
+- Improve API error handling and retry logic
+- Add CI workflows for syntax and dependency checks
+- Standardize project naming and folder structure
+- Separate course exercises from production-style examples
+
+---
+
+## Author
+
+**Umer Aziz**
+
+Python learner and developer building practical projects in data analysis, desktop applications, API integration and automation.
+
+- GitHub: [@zestymec](https://github.com/zestymec)
 
 ---
 
 <div align="center">
 
-⭐ **Learning in public, one day at a time.** ⭐
+⭐ If this repository helped you learn Python, consider giving it a star.
 
-Made with ❤️ by **Umer**
 </div>
-
-
-
-key err
-index err
-catching expection
-
-try 
-excpet
-else
-finally
-raise err
-
-video 230 done 
-write read and update json(javascript object notation) data 
-json data 
-for write
-use json.dump()
-for read use json.load()
-for update use json.update()
-
-
-how to load and read
-
-
-I M TAKING THIS ERRS I=WRITE NOW
-
-
-
-
-233 done day 30 done
-
-Recruiters ke liye sabse important improvements:
-
-1. README ke start mein clear project summary.
-2. Featured project section.
-3. Technologies and skills clearly visible.
-4. Installation and run commands.
-5. Security disclaimer.
-6. `data.txt` ko `data.json` se correct karna.
-7. Project links aur searchable keywords: `Python`, `Tkinter`, `Pandas`, `JSON`, `CSV`, `desktop GUI`, `exception handling`.
-
-/n
-242 done 
-day 31 started
-capstone project
-day 31 done 
-day 32 started 
-
-email smtp and the datetime module
-
-
-automated birthday wisher 
-
-243 done 
-Simple Mail Transfer Protocol
-
-244 done 
-smtp and how to sends mail with its help hahahhhahah
-
-
-mail recieved succesfully 
-
-245 done 
-
-date nd time mangement 
-
-246 done
-
-moday quotes sender 
-
-247 done
-
-
-bdy wisher 
-249 done 
-
-now github actions applying on it 
-
-
-250 done 
-
-working on github actions 
-
-
-day 251
-pythonanywhere platform to running code on cloud
-
-day 32 done 
-
-day 233 started
-day 252
-api's 
-application programming interface 
-
-day 254
-api endppoints  (url)
-
-api request 
-
-254 done 
-
-respose codes 
-1 = hold on
-2 = here you go 
-3 = no permision go away 
-4 = you secrewed up 
-5 = i screwed up 
-
-day 255 done 
-
-day 256
-kanye.rest project of api 
-
-split
-
-258 done
-
-day 257
-
-api parameters
-
-
-day 34 started
-
-trivia database
-api parametre switching inputs
-a quixler app and using tkinter 
-
-259 done 
-
-
-api seted up in the project 
-
-261 done
-
-learned html entities
-
-
-263 done 
-class base tkinter ui
-
-pyhton types type hints and arrows 
-
-
-267 done
-quizler app done 
-
-day 34 done 
-
-
-day 35
-api keys , Authentication , env and sms
-
-api authenticate 
-twilio
-rain allert application
-
-268 done 
-
-api key 
- 
- 269 done 
-
-api data printed
-
-270 done 
-
-api documentation 
-
-271 done 
-
-
-sms via the twilio Api 
-
-274 done
-python anywhere to automate
-
-275
-enviroment variables in detail
-
-
-api world
-
-276 done 
-
-github actions 
-
-aytomated the project of sms sender of weather 
-
-day 35 done 
-ANOTHER STCKS NEWS PROJECT 
-DAY 36 DONE 
-
-day 37 started
-
-advanced authentication and post / put/delet reqss
-habittracker app
-and use pixela 
-http reqs
-get
-post 
-put and delet
-google sheets api 
-advance authentication using http header
-
-3ways of api key
-
-apikey
-x-api-key
-Authorization
-284 done 
-
-post a pixel
