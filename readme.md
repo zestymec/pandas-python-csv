@@ -322,3 +322,13 @@ Python learner and developer building practical projects in data analysis, deskt
 ⭐ If this repository helped you learn Python, consider giving it a star.
 
 </div>
+
+
+habits travcker use pixela 
+285 done 
+286 learned strftime and date and time usage advance
+287 how to update and delet pixels , https requests 
+
+day 37 done 
+day 38 challenge project 
+workout tracking using google sheet 
