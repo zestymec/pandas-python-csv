@@ -334,3 +334,7 @@ day 38 challenge project
 workout tracking using google sheet 
 289 done apikey from https://app.100daysofpython.dev/
 290 done figure out how to print the exercise stats for plain text input.
+291 done and did this "Setup Your Google Sheet with Sheety"
+292 done Saving Data into Google Sheets
+293 Authenticate Your Sheety API to add barer token or authetication so no one other then me have tio access my sheet 
+294 Environment Variables
