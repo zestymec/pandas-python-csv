@@ -338,3 +338,9 @@ workout tracking using google sheet
 292 done Saving Data into Google Sheets
 293 Authenticate Your Sheety API to add barer token or authetication so no one other then me have tio access my sheet 
 294 Environment Variables
+
+day 38 done 
+
+day 39-40 capstone part1 (flight deal finder )
+
+296 starting project an register with serp
