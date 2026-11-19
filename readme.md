@@ -332,3 +332,5 @@ habits travcker use pixela
 day 37 done 
 day 38 challenge project 
 workout tracking using google sheet 
+289 done apikey from https://app.100daysofpython.dev/
+290 done figure out how to print the exercise stats for plain text input.
