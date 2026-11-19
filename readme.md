@@ -341,6 +341,7 @@ workout tracking using google sheet
 
 day 38 done 
 
-day 39-40 capstone part1 (flight deal finder )
+day 39-40 capstone part1 (flight deal finder ){BIG PROJECT}
 
-296 starting project an register with serp
+296 starting project an register with serpAPI and 
+requests_cache
