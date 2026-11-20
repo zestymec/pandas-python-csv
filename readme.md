@@ -355,3 +355,19 @@ Python learner and developer building practical projects in data analysis, deskt
 - Checks flights from Lahore to configured destinations for the next 180 days.
 - Sends a low-price email alert to every valid subscriber address.
 - Google Form for new subscribers: [Flight Club registration form](https://docs.google.com/forms/d/e/1FAIpQLSda38riEvmnZEDTdKqs0RYU948yemppLMbYHiKcUm17TvRcUg/viewform)
+
+
+
+going to skip some just see the which i dont now 
+i will skip because they are very easy to me in them there is what is html but i am fullstack dev already i just here to kearn about .py 
+like following me se usoe nazar mar ra bs bakia ta hay !!!
+41 done 
+42 done
+43 done 
+44 done 
+day 45 web screaping (beautiful soup )
+331 done 
+parsing html site and making soup 
+
+
+
