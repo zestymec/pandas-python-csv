@@ -6,13 +6,11 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
 PROJECT_FOLDER = Path(__file__).resolve().parent
 load_dotenv(PROJECT_FOLDER / ".env")
-
 
 def get_required_setting(name):
     value = os.getenv(name)
@@ -20,8 +18,6 @@ def get_required_setting(name):
         raise RuntimeError(f"Set {name} in stock News-Monitoring-Project/.env")
     return value
 
-
-# STEP 1: Get the stock prices from Alpha Vantage.
 alpha_vantage_key = get_required_setting("ALPHA_VANTAGE_API_KEY")
 
 stock_response = requests.get(
@@ -50,8 +46,6 @@ percentage_change = ((latest_close - previous_close) / previous_close) * 100
 
 print(f"{STOCK} changed by {percentage_change:.2f}%")
 
-
-# STEP 2: If the change is 5% or more, get the first 3 news articles.
 if abs(percentage_change) >= 2:
     news_api_key = get_required_setting("NEWS_API_KEY")
 
@@ -75,7 +69,6 @@ if abs(percentage_change) >= 2:
     if not articles:
         raise RuntimeError(f"No news articles were found for {COMPANY_NAME}.")
 
-    # STEP 3: Send the stock change and news to MAIL_RECIPIENT.
     sender = get_required_setting("MAIL_SENDER")
     mail_password = get_required_setting("MAIL_PASSWORD")
     recipient = get_required_setting("MAIL_RECIPIENT")
@@ -103,7 +96,6 @@ if abs(percentage_change) >= 2:
     message["To"] = recipient
     message.set_content("\n".join(email_lines))
 
-    # Google Workspace SMTP: use a Gmail/Workspace App Password.
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
         connection.starttls()
         connection.login(sender, mail_password)

@@ -6,7 +6,6 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-
 load_dotenv(Path(__file__).resolve().parent / ".env")
 
 api_key = os.getenv("API_KEY")

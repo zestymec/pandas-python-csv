@@ -7,26 +7,30 @@ class FlightData:
         self.out_date = out_date
         self.return_date = return_date
 
-
 def find_cheapest_flight(data):
-    """SerpAPI ke raw JSON mein se sabse sasti flight nikalta hai."""
+    """Return the cheapest valid flight in a SerpAPI response."""
     if data is None:
         return None
 
-    # SerpAPI flights ko 'best_flights' aur 'other_flights' do lists mein deta hai
     all_flights = data.get("best_flights", []) + data.get("other_flights", [])
 
     if not all_flights:
         return None
 
-    # Sabse kam 'price' wali flight select karein
-    cheapest = min(all_flights, key=lambda x: x.get("price", float("inf")))
+    valid_flights = [
+        flight
+        for flight in all_flights
+        if flight.get("price") is not None and flight.get("flights")
+    ]
+    if not valid_flights:
+        return None
+
+    cheapest = min(valid_flights, key=lambda flight: flight["price"])
     lowest_price = cheapest.get("price")
 
     if lowest_price is None:
         return None
 
-    # Flight ki details extract karein
     first_leg = cheapest["flights"][0]
     last_leg = cheapest["flights"][-1]
 

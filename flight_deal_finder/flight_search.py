@@ -4,11 +4,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 class FlightSearch:
 
     def __init__(self):
         self.api_key = os.getenv("SERPAPI_KEY")
+        if not self.api_key:
+            raise RuntimeError("Set SERPAPI_KEY before running.")
         self.endpoint = "https://serpapi.com/search.json"
 
     def check_flights(
@@ -25,9 +26,6 @@ class FlightSearch:
             "api_key": self.api_key,
         }
 
-        response = requests.get(url=self.endpoint, params=params)
-        if response.status_code != 200:
-            print(f"Error fetching flights: {response.text}")
-            return None
-
+        response = requests.get(url=self.endpoint, params=params, timeout=30)
+        response.raise_for_status()
         return response.json()

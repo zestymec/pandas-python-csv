@@ -6,13 +6,10 @@ name = "umer"
 new_list = [letter.title() for letter in name]
 print(new_list)
 
-
 rang = range(1 , 5)
 
 range_list = [num*2 for num in rang]
 print(range_list)
-
-
 
 names = ['Azhar' , 'Taha' , 'Huzaifa' , 'Ahad' , 'Anas' , 'Rafay']
 
@@ -27,7 +24,6 @@ with open("file1.txt", "r") as file1:
     number_1 = [line.strip() for line in file1]
 with open("file2.txt", "r") as file2:
     number_2 = [line.strip() for line in file2]
-
 
 result = [int(num) for num in number_1 if num in number_2]
 

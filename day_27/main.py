@@ -19,20 +19,4 @@ New_button.grid(row=2 , column=2)
 input = Entry()
 input.grid(row=3 , column=4)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.mainloop()

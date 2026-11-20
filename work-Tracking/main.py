@@ -3,10 +3,8 @@ import requests
 from datetime import datetime
 from pathlib import Path
 
-
 PROJECT_FOLDER = Path(__file__).resolve().parent
 ENV_FILE = PROJECT_FOLDER / ".env"
-
 
 def load_environment():
     if not ENV_FILE.exists():
@@ -21,13 +19,11 @@ def load_environment():
         if separator:
             os.environ[name.strip()] = value.strip().strip("\"'")
 
-
 def get_required_setting(name):
     value = os.environ.get(name)
     if not value:
         raise RuntimeError(f"Set {name} in work-Tracking/.env")
     return value
-
 
 load_environment()
 
@@ -63,7 +59,6 @@ response = requests.post(exercise_endpoint, json=parameters, headers=headers)
 response.raise_for_status()
 result = response.json()
 print(result)
-
 
 today_date = datetime.now().strftime("%d/%m/%Y")
 now_time = datetime.now().strftime("%X")

@@ -6,10 +6,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-
 PROJECT_DIR = Path(__file__).resolve().parent
 load_dotenv(PROJECT_DIR / ".env")
-
 
 def send_monday_quote() -> None:
     if dt.datetime.now().weekday() != 0:
@@ -35,7 +33,6 @@ def send_monday_quote() -> None:
         connection.sendmail(sender, recipient, message)
 
     print("Random quote sent successfully.")
-
 
 if __name__ == "__main__":
     send_monday_quote()

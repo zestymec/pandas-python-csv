@@ -5,9 +5,8 @@ import time
 
 MY_EMAIL = "___YOUR_EMAIL_HERE____"
 MY_PASSWORD = "___YOUR_PASSWORD_HERE___"
-MY_LAT = 51.507351 # Your latitude
-MY_LONG = -0.127758 # Your longitude
-
+MY_LAT = 51.507351
+MY_LONG = -0.127758
 
 def is_iss_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
@@ -19,7 +18,6 @@ def is_iss_overhead():
 
     if MY_LAT-5 <= iss_latitude <= MY_LAT+5 and MY_LONG-5 <= iss_longitude <= MY_LONG+5:
         return True
-
 
 def is_night():
     parameters = {
@@ -38,7 +36,6 @@ def is_night():
     if time_now >= sunset or time_now <= sunrise:
         return True
 
-
 while True:
     time.sleep(60)
     if is_iss_overhead() and is_night():
@@ -50,5 +47,4 @@ while True:
             to_addrs=MY_EMAIL,
             msg="Subject:Look Up👆\n\nThe ISS is above you in the sky."
         )
-
 

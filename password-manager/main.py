@@ -5,7 +5,6 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 import json 
 
-
 BACKGROUND = "#1244A0"
 SURFACE = "#305291"
 SURFACE_ALT = "#202d43"
@@ -16,7 +15,6 @@ ACCENT_HOVER = "#829cff"
 SUCCESS = "#5ed6a0"
 ERROR = "#ff8c8c"
 
-
 def generate_password():
     characters = string.ascii_letters + string.digits + string.punctuation
     password = "".join(secrets.choice(characters) for _ in range(16))
@@ -24,7 +22,6 @@ def generate_password():
     password_entry.select_range(0, tk.END)
     password_entry.focus_set()
     set_status("Secure password generated", SUCCESS)
-
 
 def copy_password():
     password = password_var.get()
@@ -36,7 +33,6 @@ def copy_password():
     window.clipboard_append(password)
     window.update()
     set_status("Password copied to clipboard", SUCCESS)
-
 
 def save_password():
     website = website_var.get().strip()
@@ -88,16 +84,13 @@ def save_password():
     website_entry.focus_set()
     set_status("Credentials saved successfully", SUCCESS)
 
-
 def toggle_password():
     password_entry.configure(show="" if password_entry.cget("show") else "•")
     reveal_button.configure(text="Hide" if password_entry.cget("show") == "" else "Show")
 
-
 def set_status(message, color=TEXT):
     status_label.configure(text=message, foreground=color)
     window.after(4000, lambda: status_label.configure(text="Ready to secure your accounts", foreground=MUTED))
-
 
 def search_password():
     website = search_var.get().strip()
@@ -139,7 +132,6 @@ def search_password():
         "Do you want to close this message?",
         parent=window,
     )
-
 
 window = tk.Tk()
 window.title("Vault • Password Manager")
@@ -230,7 +222,6 @@ def add_field(label, variable, row):
     entry = ttk.Entry(card, textvariable=variable, style="Field.TEntry", width=39)
     entry.grid(row=row + 1, column=0, columnspan=3, sticky="ew", pady=(0, 17))
     return entry
-
 
 website_entry = add_field("WEBSITE OR APP", website_var, 1)
 email_entry = add_field("USERNAME OR EMAIL", email_var, 3)

@@ -1,7 +1,6 @@
 from tkinter import *
 import math
 
-# ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -13,7 +12,6 @@ LONG_BREAK_MIN = 20
 reps = 0
 timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     if timer:
         window.after_cancel(timer)
@@ -23,7 +21,6 @@ def reset_timer():
     global reps
     reps = 0
 
-# ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     global reps
     reps += 1
@@ -42,7 +39,6 @@ def start_timer():
         count_down(work_sec)
         my_label.config(text="Work", fg=GREEN)
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
     count_min = math.floor(count / 60)
     count_sec = count % 60
@@ -59,9 +55,8 @@ def count_down(count):
         work_sessions = math.floor(reps / 2)
         for _ in range(work_sessions):
             marks += "✓"
-        checmark.config(text=marks)  # FIX: Capital 'Text' ki jagah small 'text'
+        checmark.config(text=marks)
 
-# ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro App")
 window.config(padx=100, pady=50, bg=YELLOW)

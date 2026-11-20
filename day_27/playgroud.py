@@ -7,7 +7,6 @@ def add(*args):
 
 add(5, 10, 5, 34)
 
-
 def calculate(n , **kwargs):
     for key , value in kwargs.items():
         print(key , value)
@@ -16,6 +15,5 @@ def calculate(n , **kwargs):
 
        
     print(n)
-
 
 calculate(5 ,add=4 , multiply=5 , umer =34)

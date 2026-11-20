@@ -3,7 +3,6 @@ from quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
 
-
 class QuizInterface:
 
     def __init__(self, quiz_brain: QuizBrain):
@@ -63,11 +62,4 @@ class QuizInterface:
         else:
             self.canvas.config(bg="red")
         self.window.after(1000, self.get_next_question)
-
-
-
-
-
-
-
 

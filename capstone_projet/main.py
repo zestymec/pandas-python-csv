@@ -4,7 +4,6 @@ import tkinter as tk
 
 import pandas as pd
 
-
 BACKGROUND_COLOR = "#B1DDC6"
 FONT_NAME = "Aptos"
 CARD_WIDTH = 1200
@@ -16,7 +15,6 @@ DATA_FILE = PROJECT_DIR / "data" / "japanese_words.csv"
 WORDS_TO_LEARN_FILE = PROJECT_DIR / "data" / "words_to_learn.csv"
 IMAGE_DIR = PROJECT_DIR / "images"
 
-
 def load_words() -> list[dict[str, str]]:
     source_file = (
         WORDS_TO_LEARN_FILE if WORDS_TO_LEARN_FILE.exists() else DATA_FILE
@@ -26,13 +24,11 @@ def load_words() -> list[dict[str, str]]:
         raise ValueError(f"No vocabulary entries found in {source_file}")
     return words
 
-
 def save_words(words: list[dict[str, str]]) -> None:
     pd.DataFrame(words, columns=["Japanese", "English"]).to_csv(
         WORDS_TO_LEARN_FILE,
         index=False,
     )
-
 
 class FlashcardApp:
     def __init__(self, window: tk.Tk, words: list[dict[str, str]]) -> None:
@@ -149,12 +145,10 @@ class FlashcardApp:
             tags="word",
         )
 
-
 def main() -> None:
     window = tk.Tk()
     FlashcardApp(window, load_words())
     window.mainloop()
-
 
 if __name__ == "__main__":
     main()
