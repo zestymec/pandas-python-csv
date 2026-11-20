@@ -15,13 +15,19 @@ class NotificationManager:
                 "before sending email alerts."
             )
 
-    def send_email(self, message_body):
+    def send_email(self, message_body, recipients=None):
+        recipients = recipients or [self.email]
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
             connection.login(user=self.email, password=self.password)
-            connection.sendmail(
-                from_addr=self.email,
-                to_addrs=self.email,
-                msg=f"Subject: Low Price Flight Alert!\n\n{message_body}".encode("utf-8"),
-            )
-        print("Email alert successfully sent!")
+            for recipient in recipients:
+                connection.sendmail(
+                    from_addr=self.email,
+                    to_addrs=recipient,
+                    msg=(
+                        f"Subject: Low Price Flight Alert!\n"
+                        f"To: {recipient}\n"
+                        f"\n{message_body}"
+                    ).encode("utf-8"),
+                )
+        print(f"Email alert sent to {len(recipients)} recipient(s).")

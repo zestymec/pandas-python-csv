@@ -1,13 +1,16 @@
+import os
 from datetime import datetime, timedelta
 import requests_cache
+from dotenv import load_dotenv
 from data_manager import DataManager
 from flight_data import find_cheapest_flight
 from flight_search import FlightSearch
 from notification_manager import NotificationManager
 
+load_dotenv()
 requests_cache.install_cache("flight_cache", expire_after=86400)
 
-ORIGIN_CITY_IATA = "LHE"
+ORIGIN_CITY_IATA = os.getenv("ORIGIN_CITY_IATA", "LHE")
 
 
 def run():
@@ -15,6 +18,11 @@ def run():
     flight_search = FlightSearch()
 
     sheet_data = data_manager.get_destination_data()
+    user_emails = data_manager.get_user_emails()
+    if not user_emails:
+        raise RuntimeError(
+            "No valid email addresses found in the users Sheety worksheet."
+        )
     tomorrow = datetime.now() + timedelta(days=1)
     six_months_later = tomorrow + timedelta(days=180)
 
@@ -45,7 +53,7 @@ def run():
                 f"${cheapest_flight.price}, "
                 f"{cheapest_flight.out_date} to {cheapest_flight.return_date}."
             )
-            NotificationManager().send_email(message)
+            NotificationManager().send_email(message, recipients=user_emails)
             print(message)
         else:
             print(

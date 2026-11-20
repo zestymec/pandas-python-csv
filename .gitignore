@@ -7,3 +7,6 @@ __pycache__/
 
 # Requests cache database file
 *.sqlite
+# Cache database files
+*.sqlite
+*.sqlite3
