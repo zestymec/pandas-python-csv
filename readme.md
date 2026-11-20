@@ -345,3 +345,4 @@ day 39-40 capstone part1 (flight deal finder ){BIG PROJECT}
 
 296 starting project an register with serpAPI and 
 requests_cache
+os, dotenv, aur requests_cache

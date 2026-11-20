@@ -113,4 +113,7 @@ Start
 
 
 
-sheety endpoint "https://api.sheety.co/765eebc60baea95fc8f79c2dc1a3e28b/flightDealFinderProject/sheet1"
+used mail smtp in place of twilio
+
+
+
