@@ -7,10 +7,13 @@ load_dotenv()
 class NotificationManager:
 
     def __init__(self):
-        self.email = os.getenv("MY_EMAIL")
-        self.password = os.getenv("MY_APP_PASSWORD")
+        self.email = os.getenv("MY_EMAIL") or os.getenv("MAIL_SENDER")
+        self.password = os.getenv("MY_APP_PASSWORD") or os.getenv("MAIL_PASSWORD")
         if not self.email or not self.password:
-            raise RuntimeError("Set MY_EMAIL and MY_APP_PASSWORD before running.")
+            raise RuntimeError(
+                "Set MAIL_SENDER and MAIL_PASSWORD in flight_deal_finder/.env "
+                "before sending email alerts."
+            )
 
     def send_email(self, message_body):
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:

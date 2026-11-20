@@ -1,1 +1,9 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Secret API keys & passwords
 .env
+
+# Requests cache database file
+*.sqlite
