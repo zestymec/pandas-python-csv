@@ -103,6 +103,8 @@ A class-based Tkinter trivia application that retrieves questions from an API an
 | [Japanese Flash Cards](capstone_projet/) | Learn vocabulary using a Tkinter flash-card interface | Tkinter, Pandas, CSV |
 | [ISS Overhead](Solution+-+issoverhead-end/) | Detect ISS visibility and nighttime conditions | REST APIs, SMTP, scheduling |
 | [Sunrise/Sunset API](day-33/) | Retrieve and process sunrise and sunset data | API parameters, JSON, datetime |
+| [Flight Deal Finder](flight_deal_finder/) | Track destination prices and email every registered subscriber when a deal is found | Google Sheets, SerpAPI, SMTP, dotenv |
+| [Workout Tracking](work-Tracking/) | Send exercise data to a Google Sheet through Sheety | REST APIs, environment variables, datetime |
 | [Pandas Practice](main_foolder/) | Explore weather and squirrel census datasets | Pandas, filtering, statistics |
 
 ---
@@ -324,30 +326,32 @@ Python learner and developer building practical projects in data analysis, deskt
 </div>
 
 
-habits travcker use pixela 
-285 done 
-286 learned strftime and date and time usage advance
-287 how to update and delet pixels , https requests 
+## Learning Log
 
-day 37 done 
-day 38 challenge project 
-workout tracking using google sheet 
-289 done apikey from https://app.100daysofpython.dev/
-290 done figure out how to print the exercise stats for plain text input.
-291 done and did this "Setup Your Google Sheet with Sheety"
-292 done Saving Data into Google Sheets
-293 Authenticate Your Sheety API to add barer token or authetication so no one other then me have tio access my sheet 
-294 Environment Variables
+### Habit Tracker and Pixela
 
-day 38 done 
+- Completed the Pixela habit tracker project.
+- Used `strftime()` for date formatting.
+- Learned how to create, update and delete habit pixels.
+- Practised authenticated HTTP `GET`, `POST`, `PUT` and `DELETE` requests.
 
-day 39-40 capstone part1 (flight deal finder ){BIG PROJECT}
+### Workout Tracking with Google Sheets
 
-296 starting project an register with serpAPI and 
-requests_cache
-os, dotenv, aur requests_cache
-flight club for also users making it open source project
-making this project so we can make it as app people come login and use it
-to use this app (https://docs.google.com/forms/d/e/1FAIpQLSda38riEvmnZEDTdKqs0RYU948yemppLMbYHiKcUm17TvRcUg/viewform) fill this google form
+- Completed the Day 38 workout tracking challenge.
+- Used the 100 Days of Python API to interpret plain-text exercise input.
+- Configured a Google Sheet through Sheety.
+- Saved workout data to the sheet with Sheety API requests.
+- Added bearer-token authentication to restrict sheet access.
+- Loaded credentials and API keys through environment variables.
 
-done a big flight clu app
+### Flight Deal Finder Capstone
+
+- Built a flight deal finder for the Day 39-40 capstone project.
+- Registered and configured SerpAPI for Google Flights searches.
+- Used `requests_cache` to reduce duplicate API searches during development.
+- Read destination airports and target prices from the `prices` worksheet.
+- Read subscriber email addresses from the `users` worksheet.
+- Used `python-dotenv` to keep API keys and email credentials outside source code.
+- Checks flights from Lahore to configured destinations for the next 180 days.
+- Sends a low-price email alert to every valid subscriber address.
+- Google Form for new subscribers: [Flight Club registration form](https://docs.google.com/forms/d/e/1FAIpQLSda38riEvmnZEDTdKqs0RYU948yemppLMbYHiKcUm17TvRcUg/viewform)

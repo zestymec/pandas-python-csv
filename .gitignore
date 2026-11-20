@@ -1,12 +1,28 @@
-# Python cache files
+# Byte-compiled / optimized / DLL files
 __pycache__/
+**/__pycache__/
 *.py[cod]
+*$py.class
 
-# Secret API keys & passwords
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables & Secrets
 .env
+.env.*
 
-# Requests cache database file
-*.sqlite
-# Cache database files
+# Requests cache & SQLite database files
 *.sqlite
 *.sqlite3
+*.db
+
+# IDE / Editor folders (VS Code, PyCharm, macOS)
+.vscode/
+.idea/
+.DS_Store
+
+# Logs & temporary files
+*.log
