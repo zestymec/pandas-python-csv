@@ -361,13 +361,19 @@ Python learner and developer building practical projects in data analysis, deskt
 going to skip some just see the which i dont now 
 i will skip because they are very easy to me in them there is what is html but i am fullstack dev already i just here to kearn about .py 
 like following me se usoe nazar mar ra bs bakia ta hay !!!
-41 done 
-42 done
-43 done 
-44 done 
+41 day done 
+42 day done
+43 day done 
+44 day done 
 day 45 web screaping (beautiful soup )
 331 done 
 parsing html site and making soup 
+beautifulsoup usage
+html.parser and lxml 
+332 video done
+finding and selecting particular element 
 
+333 video done
+scraping a live website 
 
 
