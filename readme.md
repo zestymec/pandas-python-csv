@@ -375,5 +375,15 @@ finding and selecting particular element
 
 333 video done
 scraping a live website 
+334 video done 
+ethics of web screaping legal or illegal and law
+public api first 
+respect the web owner
+335 done 
+scraping data dor top 100 movies
+336 done 
+day 45 done 
+
+
 
 
