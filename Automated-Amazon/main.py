@@ -28,4 +28,6 @@ Swap out the static practice URL for a real, live Amazon product URL.
 Run your script with the headers attached, verify it pulls the real-time price, and confirm your email alert triggers properly.
 
 Optional Copilot Prompt (If You Want Copilot to Generate It)
-Build a simple Python Amazon Price Tracker using requests, BeautifulSoup, smtplib, and python-dotenv. Fetch a live Amazon product URL using realistic User-Agent and Accept-Language headers, parse the product title and price as a float, and send an email alert via Gmail SMTP if the price drops below a target threshold. Load email credentials from .env.""")
+Build a simple Python Amazon Price Tracker using requests, BeautifulSoup, smtplib, and python-dotenv. Fetch a live Amazon product URL using realistic User-Agent and Accept-Language headers, parse the product title and price as a float, and send an email alert via Gmail SMTP if the price drops below a target threshold. Load email credentials from .env. dil apna purana papi hay barso se namai bna na ska""")
+name = input("whats your name")
+print(name)
