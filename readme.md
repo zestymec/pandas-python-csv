@@ -385,6 +385,8 @@ scraping data dor top 100 movies
 day 45 done 
 day 46 skipped its too basic for me
 day 47 automated amazon price tracker project 
+done amazone live price tracker and mail sender created
+
 
 
 
