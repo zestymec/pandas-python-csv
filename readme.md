@@ -392,8 +392,8 @@ video 350 selenium web driver intro of automation
 351 video done learned quit and close 
 352 video use selenium to find element on website and x-path  352 video done 
 353 video done python.org event finder using selenium 
-
-
+354 video done interact wuth site created and articles prined
+355 video ineraction with elements inputs etc and auto clicking  1.14
 
 
 
