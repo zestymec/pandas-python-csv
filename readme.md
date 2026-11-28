@@ -394,8 +394,11 @@ video 350 selenium web driver intro of automation
 353 video done python.org event finder using selenium 
 354 video done interact wuth site created and articles prined
 355 video ineraction with elements inputs etc and auto clicking  automatic filling forms
-356 video done automatic cookie clicker project 
+356 video done automatic cookie clicker project and 357 also done 
 
+day 48 finished 
+
+day 49 automating you exercise routine at gym 
 
 
 
