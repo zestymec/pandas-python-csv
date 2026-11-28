@@ -391,6 +391,8 @@ day 48 selenium automation with python
 video 350 selenium web driver intro of automation
 351 video done learned quit and close 
 352 video use selenium to find element on website and x-path  352 video done 
+353 video done python.org event finder using selenium 
+
 
 
 
