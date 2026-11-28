@@ -390,7 +390,7 @@ day 48 selenium automation with python
  selenium python selenium webdriver browser and game playing bot
 video 350 selenium web driver intro of automation
 351 video done learned quit and close 
-352 video 
+352 video use selenium to find element on website and x-path  352 video done 
 
 
 
