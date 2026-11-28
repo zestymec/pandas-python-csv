@@ -386,6 +386,12 @@ day 45 done
 day 46 skipped its too basic for me
 day 47 automated amazon price tracker project 
 done amazone live price tracker and mail sender created
+day 48 selenium automation with python 
+ selenium python selenium webdriver browser and game playing bot
+video 350 selenium web driver intro of automation
+351 video done learned quit and close 
+352 video 
+
 
 
 
